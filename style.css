@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=New+Amsterdam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jersey+10&family=New+Amsterdam&display=swap');
+
+:root{
+    --header-font:"New Amsterdam", sans-serif;
+    --general-font:"Jersey 10", sans-serif;
+    --paragraph-font:"Exo 2", sans-serif;
+    --btn-color:rgb(0, 106, 255);
+    --btn-hover-color:rgb(0, 72, 255);
+    --pop-up-bg:rgb(255, 255, 255);
+    --line-color:rgb(94, 104, 115);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+main{
+    min-height:100dvh;
+    max-height: fit-content;
+    width: 100%;
+    background-color: rgb(0, 166, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vmin;
+    overflow-x: hidden;
+}
+
+header{
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    font-family: var(--header-font);
+    font-size: 4rem;
+    font-weight: bold;
+    background:linear-gradient(45deg ,rgb(255, 0, 0)30%, rgb(115, 0, 255)70%);
+    background-clip: text;
+    color:transparent;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.2rem;
+    font-size: 1.8rem;
+    font-family: var(--paragraph-font);
+    max-height: fit-content;
+    min-height: 30%;
+    width: 90vmin;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px 0px rgb(44, 45, 49);
+    font-weight: bold;
+}
+
+.items>#inputSection{
+    height: 12vmin;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3%;
+}
+
+#inputSection>input{
+    height: 100%;
+    width: 70%;
+    outline: none;
+    background: transparent;
+    border:2px solid gray;
+    padding:0 1rem 0 1rem;
+    border-radius: 4px;
+    font-family: var(--paragraph-font);
+    font-size: 0.5em;
+}
+
+#inputSection>button , #funcBtn>button{
+    height: 100%;
+    width: 30%;
+    border-radius: 4px;
+    background-color: var(--btn-color);
+    border: none;
+    color: aliceblue;
+    font-family: var(--paragraph-font);
+    font-size: 0.6em;
+    border-bottom: 5px solid blue;
+}
+
+#inputSection>button:active , #funcBtn>button:active{
+    border: none;
+}
+
+#inputSection>button:hover{
+    cursor: pointer;
+    background-color: var(--btn-hover-color);
+}
+
+#funcBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vmin;
+    width: 100%;
+    gap: 0.85rem;
+    font-family: var(--paragraph-font)
+}
+
+#funcBtn>p{
+    height: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.4em;
+}
+
+#funcBtn>p:hover{
+    cursor: pointer;
+    border-bottom: 3px solid var(--btn-color);
+}
+
+#funcBtn>button{
+    font-size: 0.6em;
+}
+
+#funcBtn>button:hover{
+    cursor: pointer;
+    background-color: var(--btn-hover-color);
+}
+
+#lists{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width:100%;
+    max-height:fit-content;
+    font-weight: normal;
+    font-size: 0.75em;
+}
+
+#lists>.todo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 12vmin;
+    width: 100%;
+    border-radius: 7px;
+    background-color: aliceblue;
+    padding: 0 12px 0 0;
+    position: relative;
+    font-size: 0.8em;
+    border-bottom: 2px solid var(--line-color);
+}
+
+.todo>input[type = "checkbox"]{
+    all: unset;
+    height: 45%;
+    width: 7%;
+    margin-right: 5%;
+    background-color: rgb(187, 198, 209);
+    outline: none;
+    border-radius: 5px;
+}
+
+.todo>input[type = "checkbox"]:checked{
+    background-color: transparent;
+    background-image:url(square-check-solid.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.todo>input[type = "checkbox"]:hover{
+    cursor: pointer;
+    background-color: rgb(128, 145, 155);
+}
+
+.todo>p{
+    min-width: 75%;
+    max-width: 75%;
+    width: fit-content;
+    text-align: justify;
+}
+
+.todo>button{
+    all:unset;
+    height: 50%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.todo>button>img{
+    height: 100%;
+}
+
+.todo>button>.open , .close{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--pop-up-bg);
+    position: absolute;
+    top:-50%;
+    right: 0%;
+    height: 5rem;
+    width: 8rem;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px 0px rgb(44, 45, 49);
+    padding: 1rem;
+    opacity: 1;
+    scale: 1;
+    transition: all 0.2s ease-in-out;
+    pointer-events:all;
+}
+
+.todo>button>.close{
+    opacity : 0;
+    scale : 0;
+    transition: all 0.2 ease-in-out;
+    pointer-events: none;
+}
+
+.todo>button>span>.update , .todo>button>span>.delete{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.todo>button>span>.update>img , .todo>button>span>.delete>img{
+    height: 80%;
+    width: auto;
+    margin-right: 15px;
+}
+
+.todo>button>span>.update:hover , .todo>button>span>.delete:hover{
+    cursor: pointer;
+    background-color: rgba(200, 204, 215, 0.428);
+}
+
+
+#Add{
+    display: block;
+}
+
+#Edit{
+    display: none;
+}
+
+.todo>.checkID{
+    cursor: pointer;
+}
+
+.todo>.text{
+    text-decoration: line-through;
+}
+
+#line{
+    height: 2px;
+    width: 100%;
+    background-color: var(--line-color);
+}
+
+@media only screen and (min-width:600px){
+    .items{
+        width: 30rem;
+    }
+    .items>#inputSection , #funcBtn{
+        height: 3rem;
+    }
+    .items>#funcBtn>p{
+        font-size: 0.6em;
+    }
+    #lists>.todo{
+        height: 3.5rem;
+    }
+    #lists>.todo>input[type = "checkbox"]{
+        width: 6%;
+    }
+    .todo>p{
+        min-width: 78%;
+        max-width: 78%;
+        width: fit-content;
+        text-align: justify;
+    }
+}
+
+.borderBottom{
+    border-bottom: 3px solid var(--btn-hover-color);
+}
